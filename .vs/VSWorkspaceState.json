@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\account",
+    "\\account\\templates",
+    "\\account\\templates\\account",
+    "\\shop",
+    "\\shop\\static",
+    "\\shop\\static\\shop",
+    "\\shop\\static\\shop\\css",
+    "\\shop\\templates",
+    "\\shop\\templates\\shop"
+  ],
+  "SelectedNode": "\\shop\\templates\\shop\\add_product.html",
+  "PreviewInSolutionExplorer": false
+}
