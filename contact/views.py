@@ -8,5 +8,6 @@ from datetime import date
 
 
 def aboutus(request):
-    return render(request, "shop/index.html")
+    # return render(request, "shop/index.html")
+    return HttpResponse('aboutus')
 

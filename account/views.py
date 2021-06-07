@@ -1,55 +1,45 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.db.utils import IntegrityError
-from .models import Account, VendorAccount, BloggerAccount
+from .models import Account
 from django.contrib.auth.models import auth, User
 from django.contrib.auth import logout, login, authenticate
 from account.forms import AccountAuthenticationForm
 import requests
 import json
-from datetime import date
-from django.core.files.storage import default_storage
-from twilio.rest import Client
-from django.views.decorators.csrf import csrf_exempt
-
 from django.http import HttpResponseRedirect, HttpResponse
-# ---------------------------------------------------
-# GLOBAL VARIABLES
-# ---------------------------------------------------
-
-
-# ------------------------------------------------------------------------------
-# ------------------------------------------------------------------------------
-# ------------------------------------------------------------------------------
-# ------------------------------------------------------------------------------
-
-
 
 # -----------------------------------------------------------------------
 
 def userregister(request):
     msg=""
     if request.method == 'POST':
-        name = request.POST['name']
-        contact_number = int(request.POST['contact_number'])
-        email = request.POST['email']
-        password = request.POST.get('password')
+        firstname = "raju"
+        lastname = "raju"
+        contact_number = 62648463056
+        email = "jainshivam@gmail.com"
+        organisation = "raju"
+        profession = "raju"
+        gender = "male"
+        password = "12345675"
         try:
             user = Account.objects.create_customer(
-                name=name, email=email, password=password, contact_number=contact_number, viewpass=password
+                firstname=firstname,lastname=lastname, email=email, organisation=organisation, profession=profession, gender=gender, password=password, contact_number=contact_number, viewpass=password
             )
             user.save()
             login(request, user)
             msg = "User Registration Successful"
-            return render(request, 'account/register.html', {'msg': msg})
+            # return render(request, 'account/register.html', {'msg': msg})
+            return HttpResponse("registered")
         except IntegrityError as e:
             msg = email + " is already registered,if you think there is a issue please contact us at 6264843506"
-            return render(request, "account/register.html", {'msg': msg})
+            # return render(request, "account/register.html", {'msg': msg})
+            return HttpResponse("is already registered,if you think there is a issue please contact us at 6264843506")
         except Exception as e:
             print("exception :",e)
         # return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
     else:
-        return render(request, "account/register.html", {'msg': msg})
+        return HttpResponse("registered")
 
 
 def userlogin(request):
@@ -90,140 +80,6 @@ def userlogin(request):
 def logoutuser(request):
     logout(request)
     return redirect("../")
-
-
-@login_required(login_url="../login")
-def vendorregister(request):
-    global shopname
-    global shop_add
-    global plan
-    global vendorname
-    global vendoremail
-    global mobile
-    global promocode
-    global gst
-
-    if request.method == 'POST':
-        email = request.user.email
-        shop_number = request.POST.get('shop_number')
-        shopname = request.POST.get('shopname').lower()
-        gst = request.POST.get('gst')
-        shop_add_flat = request.POST['shop_add_flat']
-        shop_add_city = request.POST['shop_add_city']
-        shop_add_state = request.POST['shop_add_state']
-        shop_add_pincode = str(request.POST.get('shop_add_pincode'))
-        # shop_add = shop_add_flat + "," + shop_add_city + "," + shop_add_state + "," + shop_add_pincode
-        plan = request.POST['plan']
-        subscription_amount = 50
-        vendor = Account.objects.get(email=email)
-        vendor.is_Vendor = True
-        vendor.save()
-        promocode = request.POST.get('promocode')
-
-        try:
-            user = VendorAccount.objects.create(
-                shop_name=shopname, shop_number=shop_number, shop_add=shop_add_flat, city=shop_add_city,
-                state=shop_add_state, plan=plan, gst=gst, vendor=vendor,
-                subscripton_amount=subscription_amount, email=email)
-            user.save()
-
-        except IntegrityError as e:
-            e = str(e)
-            if e == "UNIQUE constraint failed: account_vendoraccount.shop_name":
-                shopname = shopname + "#" + vendor.name[2:5]
-
-                user = VendorAccount.objects.create(
-                    shop_name=shopname, shop_number=shop_number, shop_add=shop_add, plan=plan, gst=gst, vendor=vendor,
-                    subscripton_amount=subscription_amount, email=email)
-                user.save()
-            else:
-                msg = "vendor already registered,if you think there is a issue please contact us at 6264843506"
-                return render(request, "account/vendorregister.html", {'msg': msg})
-
-        # twilio message
-        # account_sid = 'AC58aae686ada0a42728e123cfee24cd5b'
-        # auth_token = '1d2bfa8c3b98e92dd3d9c271fba9463e'
-        # client = Client(account_sid, auth_token)
-        #
-        # message = client.messages \
-        #     .create(
-        #     body="a new vendor has registored, email=" + email + "shopname =" + shopname + "and contact_number is " + str(
-        #         mobile),
-        #     from_='+14159696324',
-        #     to='+916264843506'
-        # )
-
-        # print(message.sid)
-
-        # return redirect("../subscription")
-        msg = "Vendor Registration Successful"
-        return render(request, 'general/index.html', {'msg': msg})
-    else:
-        return render(request, "account/vendorregister.html")
-
-
-@login_required(login_url="../login")
-def bloggerregister(request):
-    if request.method == 'POST':
-        email = request.user.email
-        blogname = request.POST['blogname'].lower()
-        bio = request.POST.get('bio')
-        shop_add_flat = request.POST['shop_add_flat']
-        shop_add_city = request.POST['shop_add_city']
-        shop_add_state = request.POST['shop_add_state']
-        shop_add_pincode = str(request.POST.get('shop_add_pincode'))
-        # shop_add = shop_add_flat + "," + shop_add_city + "," + shop_add_state + "," + shop_add_pincode
-        plan = request.POST.get('plan')
-        subscription_amount = 50
-        blogger = Account.objects.get(email=email)
-        blogger.is_Blogger = True
-        blogger.save()
-        promocode = request.POST.get('promocode')
-        print("here")
-        try:
-            print("here")
-            user = BloggerAccount.objects.create(
-                blogname=blogname, address=shop_add_flat, city=shop_add_city,
-                state=shop_add_state, plan=plan, blogger=blogger,
-                subscripton_amount=subscription_amount, email=email)
-            user.save()
-            print("here save successfull")
-
-        except IntegrityError as e:
-            e = str(e)
-            print("here")
-            print(e)
-            if e == "UNIQUE constraint failed: account_bloggeraccount.blogname":
-                blogname = blogname + "#" + blogger.name[2:5]
-
-                user = BloggerAccount.objects.create(
-                    blogname=blogname, address=shop_add_flat, city=shop_add_city,
-                    state=shop_add_state, plan=plan, blogger=blogger,
-                    subscripton_amount=subscription_amount, email=email)
-                user.save()
-            else:
-                msg = "vendor already registered,if you think there is a issue please contact us at 6264843506"
-                return render(request, "account/blogger_registeration.html", {'msg': msg})
-
-        # twilio message
-        # account_sid = 'AC58aae686ada0a42728e123cfee24cd5b'
-        # auth_token = '1d2bfa8c3b98e92dd3d9c271fba9463e'
-        # client = Client(account_sid, auth_token)
-        #
-        # message = client.messages \
-        #     .create(
-        #     body="a new vendor has registored, email=" + email + "shopname =" + shopname + "and contact_number is " + str(
-        #         mobile),
-        #     from_='+14159696324',
-        #     to='+916264843506'
-        # )
-
-        # print(message.sid)
-
-        # return redirect("../subscription")
-        return redirect("../")
-    else:
-        return render(request, "account/blogger_registeration.html")
 
 
 @login_required(login_url="../login")
