@@ -24,8 +24,7 @@ urlpatterns = [
     path('',include('account.urls')),
     path('',include('debate.urls')),
 
-    path('api/courses/', include('courses.urls')),
-    path('', include('general.urls')),
+    path('api/debate/', include('debate.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

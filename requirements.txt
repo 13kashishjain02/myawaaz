@@ -1,0 +1,1 @@
+install django social-auth-app-django
