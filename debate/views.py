@@ -1,16 +1,13 @@
 from django.shortcuts import render
-from debate.models import Debate
+from debate.models import Debate,Pros,Cons
 from django.http import HttpResponseRedirect, HttpResponse
-from .serializers import DebateSerializer
+from .serializers import DebateSerializer,ProsCommentSerializer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 def post(request):
-    debate=Debate.objects.create(title='title2',
-                          pros={'pros': [], 'comment': [],},
-                          cons={'cons': [], 'comment': [],}
-                          )
+    debate=Debate.objects.create(title='title2')
     debate.save()
     return HttpResponse("done")
 
@@ -54,37 +51,88 @@ def comment(request,id):
     return HttpResponse("done")
 
 
+# @csrf_exempt
+# @api_view(['POST','GET','PUT','DELETE'])
+# def comment_api(request,id=None):
+#     if request.method=="GET":
+#         if id is None:
+#             data=Debate.objects.all()
+#             serializer=DebateSerializer(data,many=True)
+#             print("hello",serializer.data)
+#             return Response(serializer.data)
+#
+#         else:
+#             data=Debate.objects.filter(pk=id)
+#             serializer=DebateSerializer(data,many=True)
+#             print("hello",type(serializer.data))
+#             print("hello",serializer.data)
+#             return Response(serializer.data)
+#
+#
+#     if request.method=='POST':
+#         serializer=DebateSerializer(data=request.data)
+#         print(serializer.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response({'msg','DATA CREATED'})
+#         return Response(serializer.errors)
+#
+#     if request.method=='PUT':
+#         data=Debate.objects.get(pk=id)
+#         serializer=DebateSerializer(data,data=request.data,partial=True)
+#         if serializer.is_valid():
+#             serializer.save()
+#             print("PUT data", serializer.data)
+#             return Response({'msg','Data Updated'})
+#         return Response(serializer.errors)
+#
+#     if request.method=='DELETE':
+#         data=Debate.objects.get(pk=id)
+#         data.delete()
+#         return Response({'msg':'data deleted'})
 
+
+def add_pros(request,id):
+    debate=Debate.objects.get(id=id)
+    pros = Pros.objects.create(debate_pros=debate,pros="pros2")
+    pros.save()
+    return HttpResponse("done")
+
+def add_cons(request,id):
+    debate=Debate.objects.get(id=id)
+    cons = Cons.objects.create(debate_cons=debate,cons="cons2")
+    cons.save()
+    return HttpResponse("done")
 
 @csrf_exempt
 @api_view(['POST','GET','PUT','DELETE'])
 def comment_api(request,id=None):
     if request.method=="GET":
         if id is None:
-            data=Debate.objects.all()
-            serializer=DebateSerializer(data,many=True)
+            data=Pros.objects.all()
+            serializer=ProsCommentSerializer(data,many=True)
             print("hello",serializer.data)
             return Response(serializer.data)
 
         else:
-            data=Debate.objects.filter(pk=id)
-            serializer=DebateSerializer(data,many=True)
-            print("hello",type(serializer.data))
+            # debate=Debate.objects.get(pk=id)
+            data=Pros.objects.filter(pk=id)
+            serializer=ProsCommentSerializer(data,many=True)
             print("hello",serializer.data)
             return Response(serializer.data)
 
 
     if request.method=='POST':
-        serializer=DebateSerializer(data=request.data)
-        print(serializer.data)
+        serializer=ProsCommentSerializer(data=request.data)
+        # print(serializer.data)
         if serializer.is_valid():
             serializer.save()
             return Response({'msg','DATA CREATED'})
         return Response(serializer.errors)
 
     if request.method=='PUT':
-        data=Debate.objects.get(pk=id)
-        serializer=DebateSerializer(data,data=request.data,partial=True)
+        data=Pros.objects.get(pk=id)
+        serializer=ProsCommentSerializer(data,data=request.data,partial=True)
         if serializer.is_valid():
             serializer.save()
             print("PUT data", serializer.data)

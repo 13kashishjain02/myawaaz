@@ -2,33 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db17c2aa-6ad7-412a-abc2-1f2c2149bf77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/migrations/0002_auto_20210607_1741.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/templates/general/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +25,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1tZnuga5KrgTVscR8ci1dqnb4Ud" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -55,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Prod-FSV" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myshop" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,5 +66,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

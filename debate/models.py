@@ -15,11 +15,26 @@ Target_exam = [
     ('other', 'Other'),
 ]
 
+
+
+
 class Debate(models.Model):
     title = models.CharField(max_length=200)
-    pros =models.JSONField(default=dict, blank=True, null=True)
-    cons =models.JSONField(default=dict, blank=True, null=True)
+    image = models.ImageField(upload_to= "images", default="",null=True)
+    # pros =models.JSONField(default=dict, blank=True, null=True)
+    # cons =models.JSONField(default=dict, blank=True, null=True)
+    # comments = models.JSONField(default=dict, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def _str_(self):
         return self.title
+
+class Pros(models.Model):
+    debate_pros = models.ForeignKey(Debate, related_name='pros',on_delete=models.CASCADE)
+    pros = models.TextField(null=True,blank=True)
+    comments = models.JSONField(default=dict, blank=True, null=True)
+
+class Cons(models.Model):
+    debate_cons = models.ForeignKey(Debate, related_name='cons',on_delete=models.CASCADE)
+    cons = models.TextField(null=True,blank=True)
+    comments = models.JSONField(default=dict, blank=True, null=True)
