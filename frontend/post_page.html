@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  .debate-head{
+    padding:1%;
+  }
+  #rating-heading{
+      width:70%;
+  }
+
+  
+.like-icon{
+  padding: 1%;
+}
+.like-icon:hover{
+  animation: e
+}
+header{
+  margin-bottom: 10%;
+
+}
+
+/* animation */
+.favour-box{
+      display: inline-block;
+      font-size: 1.2em;
+      /* "to left" / "to right" - affects initial col
+      or */
+      background: linear-gradient(to left, white 50%,lightgreen 50%) right;
+      background-size: 200%;
+      transition: .4s ease-out;
+  }
+  .favour-box:hover {
+      background-position: left;   
+  }
+  .against-box{
+      display: inline-block;
+      font-size: 1.2em;
+      /* "to left" / "to right" - affects initial col
+      or */
+      background: linear-gradient(to left, white 50%,black 50%) right;
+      background-size: 200%;
+      transition: .4s ease-out;
+  }
+  .against-box:hover {
+      background-position: left;   
+  }
+
+
+@media only screen and (max-width: 768px) {
+
+  /* For mobile phones: */
+ header{
+   margin-top: 20%;
+ }
+}
+
+
+  </style>
+
+<header>
+  <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-white" id="navibar">
+    <a class="navbar-brand" href="index.html"><button class="btn btn-dark">My Awaaz</button></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse navbar-expand-sm" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" id="navbarSupportedContent" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Create</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <a href="/login/creat_acc.html"><button class="btn btn-outline-info m-2" type="button">Sign up</button></a>
+        <button class="btn btn-outline-danger" type="button">Login</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+
+
+<body>
+
+<div class="row m-3 justify-content-center text-center">
+<div class=" col-auto border border-primary rounded" id="rating-heading">
+    <div class="container-fluid">
+        <div class="like-icon float-right"><img src="icons/heart.svg" alt="like-button"></div>
+    </div>
+    <div class="debate-head">
+      <h2>All Drugs should Legalised.</h2>
+    </div>    
+</div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-5 border border-success rounded m-2 p-md-3 font-weight-bolder text-success favour-box"> 
+    Speak in favour
+  </div>
+  <div class="col-5 border border-danger rounded m-2 p-md-3 font-weight-bolder text-danger against-box">
+    Speak Against
+  </div>
+</div>
+<div class="row  justify-content-center">
+  
+  
+  <div class="col-5  border border-success rounded m-2" >
+      <p>
+      If drug were legalised the drug trade would be less able to fuel serious crime.
+      </p>
+      <div class="text-left">
+        <ul class="list-group list-group-horizontal-xl list-group-flush" style="width: fit-content;">
+          <li class="list-group-item">
+            <span class=""> <img src="icons/hand-thumbs-up.svg" alt="like-icon"></span>
+          </li>
+          <li class="list-group-item border-0">
+            <button type="button" class="border-0 bg-white" data-toggle="modal" data-target="#myModal"><img src="/icons/chat-left-dots.svg" alt=""></button>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Comments</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="media"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+        <input type="text" name="comment-text" id="cmt-txt" class="input-group input-group-text input-group-lg" placeholder="Type your comment">    
+        <input type="button" value="Comment" class="m-2 btn-primary rounded">    
+      </div>
+        <div class="container mb-5 mt-5">
+          <div class="card">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="media"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+                                  <div class="media-body">
+                                      <div class="row">
+                                          <div class="col-8 d-flex">
+                                              <h5>Ram</h5> <span>- 2 hours ago</span>
+                                          </div>
+                                          <div class="col-4">
+                                              <div class="pull-right reply"> <a href="#"><span><i class="fa fa-reply"></i> reply</span></a> </div>
+                                          </div>
+                                      </div> It is a long established fact that a reader will be distracted by the readable content of a page. <div class="media mt-4"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Yogesh</h5> <span>- 3 hours ago</span>
+                                                  </div>
+                                              </div> letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                          </div>
+                                      </div>
+                                      <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Kashish</h5> <span>- 4 hours ago</span>
+                                                  </div>
+                                              </div> the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="media mt-4"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+                                  <div class="media-body">
+                                      <div class="row">
+                                          <div class="col-8 d-flex">
+                                              <h5>Shyam</h5> <span>- 2 hours ago</span>
+                                          </div>
+                                          <div class="col-4">
+                                              <div class="pull-right reply"> <a href="#"><span><i class="fa fa-reply"></i> reply</span></a> </div>
+                                          </div>
+                                      </div> The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33. <div class="media mt-4"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Ram</h5> <span>- 5 hours ago</span>
+                                                  </div>
+                                              </div> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                          </div>
+                                      </div>
+                                      <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Gita</h5> <span>- 5 hours ago</span>
+                                                  </div>
+                                              </div> a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur
+                                          </div>
+                                      </div>
+                                      <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Nita</h5> <span>- 4 hours ago</span>
+                                                  </div>
+                                              </div> the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+          </li>
+        </ul>
+      </div>
+  </div>
+  <div class="col-5 border border-danger rounded m-2">
+        <p> 
+        Legalisation will increase overall drug use, therby worsening existing public health problems.
+        </p>
+  </div>
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-5 border border-success rounded m-2">
+    <p>
+      Drug legalisation would stimulate local and national economies.
+    </p>
+  </div>
+  <div class="col-5 border border-danger rounded m-2">
+      <p> 
+        It would be immoral to legalise the substances that are currently illegal.
+      </p>
+</div>
+
+</div>
+<script src="/js/bootstrap.js"></script>
+</body>
+
+<footer>
+  <div class="container-fluid  justify-content-center text-light bg-dark">
+    <footer>
+        <div class="row my-5 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="text-muted mb-md-0 mb-5 bold-text">My Awaaz</h3>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12 ">
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                        <ul class="list-unstyled text-decoration-none">
+                            <li>Home</li>
+                            <li>Create</li>
+                            <li>Explore</li>
+                            <li>About Us</li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                        <p class="mb-1">829 , Xyz colony </p>
+                        <p>DELHI , INDIA</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> My Awaaz All Rights Reserved.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</footer>
+</html>

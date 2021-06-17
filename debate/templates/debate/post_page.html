@@ -1,0 +1,333 @@
+{% extends 'debate/base.html' %}
+{%load static%}
+{% block title%} Shop - Elpizo{% endblock %}
+{% block style%}
+      <style>
+  .debate-head{
+    padding:1%;
+  }
+  #rating-heading{
+      width:70%;
+  }
+
+
+.like-icon{
+  padding: 1%;
+}
+.like-icon:hover{
+  animation: e
+}
+header{
+  margin-bottom: 10%;
+
+}
+
+/* animation */
+.favour-box{
+      display: inline-block;
+      font-size: 1.2em;
+      /* "to left" / "to right" - affects initial col
+      or */
+      background: linear-gradient(to left, white 50%,lightgreen 50%) right;
+      background-size: 200%;
+      transition: .4s ease-out;
+  }
+  .favour-box:hover {
+      background-position: left;
+  }
+  .against-box{
+      display: inline-block;
+      font-size: 1.2em;
+      /* "to left" / "to right" - affects initial col
+      or */
+      background: linear-gradient(to left, white 50%,black 50%) right;
+      background-size: 200%;
+      transition: .4s ease-out;
+  }
+  .against-box:hover {
+      background-position: left;
+  }
+
+
+@media only screen and (max-width: 768px) {
+
+  /* For mobile phones: */
+ header{
+   margin-top: 20%;
+ }
+}
+
+
+  </style>
+{% endblock %}
+
+{% block body%}
+
+
+<div class="row m-3 justify-content-center text-center">
+<div class=" col-auto border border-primary rounded" id="rating-heading">
+    <div class="container-fluid">
+        <div class="like-icon float-right"><img src="icons/heart.svg" alt="like-button"></div>
+    </div>
+    <div class="debate-head">
+      <h2>{{title}}</h2>
+    </div>    
+</div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-5 border border-success rounded m-2 p-md-3 font-weight-bolder text-success favour-box"> 
+    Speak in favour
+  </div>
+  <div class="col-5 border border-danger rounded m-2 p-md-3 font-weight-bolder text-danger against-box">
+    Speak Against
+  </div>
+</div>
+<div class="row  justify-content-center">
+  <div class="col-5">
+  {% for i in pros %}
+  <div class="  border border-success rounded m-1" >
+      <p>
+          {{i.pros}}
+      </p>
+      <div class="text-left">
+        <ul class="list-group list-group-horizontal-xl list-group-flush" style="width: fit-content;">
+          <li class="list-group-item">
+            <span class=""> <img src="icons/hand-thumbs-up.svg" alt="like-icon"></span>
+          </li>
+          <li class="list-group-item border-0">
+            <button type="button" class="border-0 bg-white" data-toggle="modal" data-target="#myModal"><img src="/icons/chat-left-dots.svg" alt=""></button>
+              <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Comments</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="media"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+        <input type="text" name="comment-text" id="cmt-txt" class="input-group input-group-text input-group-lg" placeholder="Type your comment">    
+        <input type="button" value="Comment" class="m-2 btn-primary rounded">    
+      </div>
+        <div class="container mb-5 mt-5">
+          <div class="card">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="media"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+                                  <div class="media-body">
+                                      <div class="row">
+                                          <div class="col-8 d-flex">
+                                              <h5>Ram</h5> <span>- 2 hours ago</span>
+                                          </div>
+                                          <div class="col-4">
+                                              <div class="pull-right reply"> <a href="#"><span><i class="fa fa-reply"></i> reply</span></a> </div>
+                                          </div>
+                                      </div> It is a long established fact that a reader will be distracted by the readable content of a page. <div class="media mt-4"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Yogesh</h5> <span>- 3 hours ago</span>
+                                                  </div>
+                                              </div> letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                          </div>
+                                      </div>
+                                      <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Kashish</h5> <span>- 4 hours ago</span>
+                                                  </div>
+                                              </div> the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="media mt-4"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+                                  <div class="media-body">
+                                      <div class="row">
+                                          <div class="col-8 d-flex">
+                                              <h5>Shyam</h5> <span>- 2 hours ago</span>
+                                          </div>
+                                          <div class="col-4">
+                                              <div class="pull-right reply"> <a href="#"><span><i class="fa fa-reply"></i> reply</span></a> </div>
+                                          </div>
+                                      </div> The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33. <div class="media mt-4"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Ram</h5> <span>- 5 hours ago</span>
+                                                  </div>
+                                              </div> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                          </div>
+                                      </div>
+                                      <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Gita</h5> <span>- 5 hours ago</span>
+                                                  </div>
+                                              </div> a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur
+                                          </div>
+                                      </div>
+                                      <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-12 d-flex">
+                                                      <h5>Nita</h5> <span>- 4 hours ago</span>
+                                                  </div>
+                                              </div> the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+          </li>
+        </ul>
+      </div>
+  </div>
+  {% endfor %}
+  </div>
+
+  <div class="col-5">
+      {% for i in cons %}
+          <div class="  border border-danger rounded m-1" >
+              <p>
+                  {{i.cons}}
+              </p>
+              <div class="text-left">
+                <ul class="list-group list-group-horizontal-xl list-group-flush" style="width: fit-content;">
+                  <li class="list-group-item">
+                    <span class=""> <img src="icons/hand-thumbs-up.svg" alt="like-icon"></span>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <button type="button" class="border-0 bg-white" data-toggle="modal" data-target="#myModal"><img src="/icons/chat-left-dots.svg" alt=""></button>
+                      <!-- Modal -->
+                      <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-dialog-centered modal-xl">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Comments</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="media"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+                <input type="text" name="comment-text" id="cmt-txt" class="input-group input-group-text input-group-lg" placeholder="Type your comment">
+                <input type="button" value="Comment" class="m-2 btn-primary rounded">
+              </div>
+                <div class="container mb-5 mt-5">
+                  <div class="card">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="media"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-8 d-flex">
+                                                      <h5>Ram</h5> <span>- 2 hours ago</span>
+                                                  </div>
+                                                  <div class="col-4">
+                                                      <div class="pull-right reply"> <a href="#"><span><i class="fa fa-reply"></i> reply</span></a> </div>
+                                                  </div>
+                                              </div> It is a long established fact that a reader will be distracted by the readable content of a page. <div class="media mt-4"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                                  <div class="media-body">
+                                                      <div class="row">
+                                                          <div class="col-12 d-flex">
+                                                              <h5>Yogesh</h5> <span>- 3 hours ago</span>
+                                                          </div>
+                                                      </div> letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                                  </div>
+                                              </div>
+                                              <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                                  <div class="media-body">
+                                                      <div class="row">
+                                                          <div class="col-12 d-flex">
+                                                              <h5>Kashish</h5> <span>- 4 hours ago</span>
+                                                          </div>
+                                                      </div> the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="media mt-4"> <img class="mr-3 rounded-circle" alt="user-pic" src="images/default-user.png" />
+                                          <div class="media-body">
+                                              <div class="row">
+                                                  <div class="col-8 d-flex">
+                                                      <h5>Shyam</h5> <span>- 2 hours ago</span>
+                                                  </div>
+                                                  <div class="col-4">
+                                                      <div class="pull-right reply"> <a href="#"><span><i class="fa fa-reply"></i> reply</span></a> </div>
+                                                  </div>
+                                              </div> The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33. <div class="media mt-4"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                                  <div class="media-body">
+                                                      <div class="row">
+                                                          <div class="col-12 d-flex">
+                                                              <h5>Ram</h5> <span>- 5 hours ago</span>
+                                                          </div>
+                                                      </div> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                                  </div>
+                                              </div>
+                                              <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                                  <div class="media-body">
+                                                      <div class="row">
+                                                          <div class="col-12 d-flex">
+                                                              <h5>Gita</h5> <span>- 5 hours ago</span>
+                                                          </div>
+                                                      </div> a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur
+                                                  </div>
+                                              </div>
+                                              <div class="media mt-3"> <a class="pr-3" href="#"><img class="rounded-circle" alt="user-pic" src="images/default-user.png" /></a>
+                                                  <div class="media-body">
+                                                      <div class="row">
+                                                          <div class="col-12 d-flex">
+                                                              <h5>Nita</h5> <span>- 4 hours ago</span>
+                                                          </div>
+                                                      </div> the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+                  </li>
+                </ul>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+<script src="/js/bootstrap.js"></script>
+{%endblock%}

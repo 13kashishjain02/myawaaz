@@ -5,10 +5,29 @@ from .serializers import DebateSerializer,ProsCommentSerializer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.db.utils import IntegrityError
+
+def index(request):
+    debate=Debate.objects.values()
+    return render(request,"debate/index.html",{"debate":debate})
+
+def post_view(request,slug):
+    debate = Debate.objects.get(slug=slug)
+    title=debate.title
+    pros=Pros.objects.filter(debate_pros=debate)
+    cons = Cons.objects.filter(debate_cons=debate)
+    # return HttpResponse(slug)
+    return render(request, "debate/post_page.html", {"title": title,"pros":pros,"cons":cons})
 
 def post(request):
-    debate=Debate.objects.create(title='title2')
-    debate.save()
+    try:
+        title='everyone should be vegan'
+        slug = title.replace(" ", "-")
+        debate=Debate.objects.create(title=title,slug=slug)
+        debate.save()
+    except IntegrityError as e:
+        msg = "discussion with this title already exist"
+        return HttpResponse(msg)
     return HttpResponse("done")
 
 def pros_cons(request,id):
@@ -111,14 +130,12 @@ def comment_api(request,id=None):
         if id is None:
             data=Pros.objects.all()
             serializer=ProsCommentSerializer(data,many=True)
-            print("hello",serializer.data)
             return Response(serializer.data)
 
         else:
             # debate=Debate.objects.get(pk=id)
             data=Pros.objects.filter(pk=id)
             serializer=ProsCommentSerializer(data,many=True)
-            print("hello",serializer.data)
             return Response(serializer.data)
 
 
@@ -126,7 +143,22 @@ def comment_api(request,id=None):
         serializer=ProsCommentSerializer(data=request.data)
         # print(serializer.data)
         if serializer.is_valid():
-            serializer.save()
+            comment=serializer.data
+            data = Pros.objects.get(pk=id)
+
+            # request in form
+            # {
+            #     "comments":
+            #         {
+            #             "name": "ram",
+            #             "comment": "jai shree ram"
+            #         }
+            # }
+
+            data.comments.append(comment["comments"])
+            data.save()
+
+            # serializer.save()
             return Response({'msg','DATA CREATED'})
         return Response(serializer.errors)
 

@@ -1,0 +1,115 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.crt_acc_frm{
+  width: 100%;
+  padding-top: 5%;
+  float: left;
+}
+
+.crt_acc_title{
+    display: block;
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 40px;
+    color: #4b2354;
+    text-align: center;
+    margin-bottom: 4%;
+}
+.req{
+  float: right;
+  color: red;
+  padding-top: 16px;
+  font-family: fangsong;
+  font-weight: 600;
+}
+.input-out{
+  display: flex;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 20px;
+  border-color: black;
+  margin:4%;
+}
+.input-in{
+  display: block;
+  font-family: monospace;
+  font-size: 25px;
+  font-weight: bold;
+  color: #4b2354;
+  width: 100%;
+  height:1.9em;
+
+}
+.btn_in{
+  width: 160px;
+  height: 50px;
+  background-color: #bd59d4;
+  border: transparent;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 10px 30px 0px  rgba(189, 89, 212, 0.5);
+}
+.btn_in:hover{
+  background-color: #4b2354;
+  box-shadow: 0 10px 30px 0px rgb(189 89 212 / 80%);
+}
+.txt1{
+  display: flex;
+  text-align: center;
+  font-family: SourceSansPro-Regular;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #999999;
+  justify-content: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+/* .poo{
+  margin-top: 40px;
+} */
+
+.btnlog {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.linkedin{
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+.btnlog:hover {
+  opacity: 1;
+  text-decoration: none;
+  color:whitesmoke;
+}
+header{
+  margin-top: 10%;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+ header{
+   margin-top: 20%;
+ }
+}

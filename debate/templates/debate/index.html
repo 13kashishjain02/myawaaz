@@ -1,0 +1,109 @@
+{% extends 'debate/base.html' %}
+{%load static%}
+{% block title%} Shop - Elpizo{% endblock %}
+{% block style%}
+    <style>
+      header {
+    height: 50vh;
+    background-size:cover;
+    background-image:url(static/debate/images/explore_desktop.jpeg);
+}
+  </style>
+{% endblock %}
+
+{% block body%}
+<div class="container-fluid pop-tags">
+  <center><h3 class="p-sm-3">Some Popular Tags</h3></center>
+  <div class="row">
+    <div class=" col-3">
+      <img src="{%static 'debate/images/tech-pic.jpg'%}" alt="robot-picture" class="rounded-circle img-fluid ">
+      <center><p>Technology</p></center>
+    </div>
+    <div class="col-3">
+      <img src="{%static 'debate/images/politics.jpg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      <center><p>Politics</p></center>
+    </div>
+    <div class="col-3">
+      <img src="{%static 'debate/images/science.jpg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      <center><p>Science</p></center>
+    </div>
+    <div class="col-3">
+      <img src="{%static 'debate/images/education.jpg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      <center><p>Education</p></center>
+    </div>
+  </div>
+
+</div>
+    <ul class="nav p-sm-3">
+        <li class="nav-item nav-item-bar">
+          <a class="nav-link" href="index.html">Popular</a>
+        </li>
+        <li class="nav-item nav-item-bar">
+          <a class="nav-link" href="#">New</a>
+        </li>
+        <li class="nav-item nav-item-bar">
+          <a class="nav-link" href="#">Hot</a>
+        </li>
+        <li class="nav-item nav-item-bar">
+            <a class="nav-link " href="#">Featured</a>
+          </li>
+    </ul>
+    <div class="container-fluid">
+        <div class="row">
+            {% for i in debate %}
+                <div class="col-lg-4 col-12">
+              <div class="card">
+                  <a href="../{{i.slug}}"><img class="card-img-top" src="/media/{{i.image}}" alt="drugs"></a>
+                <div class="card-body">
+                    <a href="../{{i.slug}}"><h5 class="card-title">{{i.title}}</h5></a>
+                  <div class="card-text">
+                    <ul class="list-group list-group-horizontal list-group-flush">
+                      <img src="{%static 'debate/icons/chat-right-dots.svg'%}" alt="">
+                      <li class="list-group-item">2.6K</li>
+                      <img src="{%static 'debate/icons/pencil-fill.svg'%}" alt="">
+                      <li class="list-group-item">9.5k</li>
+                      <img src="{%static 'debate/icons/people-fill.svg'%}" alt="">
+                      <li class="list-group-item">7k</li>
+                      <img src="{%static 'debate/icons/eye.svg'%}" alt="">
+                      <li class="list-group-item">7k</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="container">
+      <p class="My-awaz-no">My Awaaz in numbers</p>
+      <div class="row">
+          <div class="four col-md-3">
+              <div class="counter-box colored"> <i class="fa fa-assistive-listening-systems"></i> <span class="counter">2147</span>
+                  <p>Happy Customers</p>
+              </div>
+          </div>
+          <div class="four col-md-3">
+              <div class="counter-box"> <i class="fa fa-group"></i> <span class="counter">3275</span>
+                  <p>Registered Members</p>
+              </div>
+          </div>
+          <div class="four col-md-3">
+              <div class="counter-box"> <i class="fa fa-shopping-cart"></i> <span class="counter">289</span>
+                  <p>Available Products</p>
+              </div>
+          </div>
+          <div class="four col-md-3">
+              <div class="counter-box"> <i class="fa fa-user"></i> <span class="counter">1563</span>
+                  <p>Saved Trees</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <script src="{%static 'debate/js/bootstrap.js'%}"></script>
+{% endblock %}
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="creat_acc_style.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <title>Create account | My Awaaz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="TITLE_ICON_SMALL.ico">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-white" id="navibar">
+      <a class="navbar-brand" href="/index.html"><button class="btn btn-dark">My Awaaz</button></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse navbar-expand-sm" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" id="navbarSupportedContent" href="/index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Create</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <a href="/login/creat_acc.html"><button class="btn btn-outline-info m-2" type="button">Sign up</button></a>
+          <button class="btn btn-outline-danger m-2" type="button">Login</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+    
+    
+      <form class="crt_acc_frm">
+        <span class="crt_acc_title">
+          Create account
+        </span>
+        <div class="req pb-md-4">
+          *All fields are required | Fill all the details correctly
+        </div>
+        <div class="input-out" >
+          <input class="input-in" type="text" name="name" placeholder="First name" required>
+        </div>
+        <div class="input-out">
+          <input class="input-in" type="text" name="name" placeholder="Last name" required>
+        </div>
+        <div class="input-out " >
+          <input class="input-in" type="email" name="mail_id" placeholder="Email" required>
+        </div>
+        <div class="input-out " >
+          <input class="input-in" type="tel" name="contact_no" placeholder="Mobile no." required>
+        </div>
+        <div class="input-out">
+          <select class="input-in crs"  type="gender" name="gender" required>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option selected="Select" value="s">Select Gender</option>
+          </select>
+        </div>
+        <div class="input-out " >
+          <input class="input-in" type="text" name="organization" placeholder="Organization" required>
+        </div>
+        <div class="input-out">
+          <input class="input-in" type="text" name="profession" placeholder="Profession" required>
+        </div>
+        <div class="input-out " >
+          <input class="input-in" type="password" name="password" placeholder="Password" minlength="8" required>
+        </div>
+        <div class="container text-center">
+          <button class="btn_in m-2" onclick="alert('Sorry,\nSince,we are not connected to database right now.\nWe cant process your request\nPlease try again after some time')">
+            Submit
+          </button>
+            <input class="btn_in m-2" type="reset" >
+        </div>
+        </div>
+      </form>
+      <div class="text-center">
+        <p><b>OR</b></p><hr>
+      </div>
+      <div class="container-md text-center mt-xl-5">
+        <a href="#" class="fb btnlog">
+          <i class="fa fa-facebook fa-fw"></i> Sign Up with Facebook
+         </a>
+        <a href="#" class="linkedin btnlog">
+          <i class="fa fa-linkedin fa-fw"></i> Sign Up with LinkedIn
+        </a>
+        <a href="#" class="google btnlog"><i class="fa fa-google fa-fw">
+          </i> Sign Up with Google
+        </a>
+      </div>
+      
+<script src="/js/bootstrap.js"></script>
+</body>
+</html>
