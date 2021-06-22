@@ -3,8 +3,6 @@ from account.models import Account
 # from django.contrib.auth.admin import UserAdmin
 
 
-# Register your models here.
-
 
 class AccountAdmin(admin.ModelAdmin):
     list_display = ('email', 'firstname', 'contact_number', 'last_login')

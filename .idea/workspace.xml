@@ -3,142 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="db17c2aa-6ad7-412a-abc2-1f2c2149bf77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/blogger_registeration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/choose_template_blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/choose_template_vendor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/customise_template_blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/customise_template_vendor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/paytm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/vendorregister.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/migrations/0002_debate_comments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/migrations/0003_auto_20210615_1715.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/migrations/0004_remove_debate_comments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/migrations/0005_debate_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/migrations/0006_alter_pros_comments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/migrations/0007_debate_slug.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/debate/static/debate/css/mystyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/templates/debate/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/templates/debate/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debate/templates/debate/post_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/post_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/blog/images/blog-avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/blog/images/blog.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/blog/images/user/blog.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/WhatsApp_Image_2021-03-31_at_5.35.48_PM.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/WhatsApp_Image_2021-03-31_at_5.35.48_PM_1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/WhatsApp_Image_2021-03-31_at_5.57.32_PM.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/WhatsApp_Image_2021-03-31_at_5.57.32_PM_1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/basketsquare.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/bhand.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog-avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog-avatar2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog-avatar2_XMDasbn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog-avatar2_svW6QRB.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog-avatar_Qffox0v.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog-avatar_TCXhd8L.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog-avatar_sWex1gx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog2_FoOweAN.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/blog2_N9ENMD8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig2_1S7sdLe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig2_2zFdWr3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig2_77GssJ1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig2_ZDltCNa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig2_iOYnaaK.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_1Vw9DsX.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_4eTXcfQ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_8dlNldq.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_8lgyzYL.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_ACXk7oR.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_Aq2JrsU.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_CD7rLjf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_Jm8wgUd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_JrsEY4v.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_LRdioLc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_MM8EyAU.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_MbCgmfx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_OmjJPFb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_OxGv4Di.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_Rama5ue.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_WUoi6eQ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_YA9H8U7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_gpjue0N.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_ha6FWpk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_iLbP5Q0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_iSB3SOT.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_lTOk1HJ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_np3f4nU.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_osByIv1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_ppDW8wV.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_tlrMJQZ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_u9NDSzQ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_w5yMkvw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/detailbig3_wF6uuJO.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/ebc543cc85014b90cd105c265bda945d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/ebc543cc85014b90cd105c265bda945d_GyYMfMr.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/ebc543cc85014b90cd105c265bda945d_iaSspTu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/ebc543cc85014b90cd105c265bda945d_pDs1Amj.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product-jpeg-500x500.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product-jpeg-500x500_EwnsKsm.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product-jpeg-500x500_ccZf3KK.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product-jpeg-500x500_nDAIzXk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_1QcZTS9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_2_Rsr8C8b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_2_axlAInl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_2_gyxfgr7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_2_hFJqZks.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_2_kbtHEIA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_2_zF6nban.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_5DrbGqn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_6XOC3yX.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_7TaQ5kj.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_9yhEJgP.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_DDTVels.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_PJpRTTb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_ZUDyyua.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_bGVHNwo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_c8hdg7a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product1_y3YEy36.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_8S0dI1e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_GI0g6RV.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_NbWCf4H.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_VmXoLHs.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_VuYr2Xt.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_aHn4xma.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_nU94Hs3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product2_opUFf4R.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3_2_qdz9c8q.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3_2_tJsKWcn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3_2_yHsqapS.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3_EgBB8dp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3_MVWyy07.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3_NsnHXZV.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/product3_XMJLAJU.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/sherwani.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/sherwani_60O17NX.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/sherwani_ZOSCOeD.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/shop/images/sherwani_tKxr0qG.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/autocomplete.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/changelists.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/nav_sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/nav_sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/widgets.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/autocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/cancel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/urlify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/shop/css/style.default.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/shop/css/style.default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/css/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/mystyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/login/creat_acc.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login/creat_acc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/post_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/post_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,5 +88,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/debate/views.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -23,14 +23,14 @@ def userregister(request):
         gender = "male"
         password = "12345675"
         try:
-            user = Account.objects.create_customer(
+            user = Account.objects.create_user(
                 firstname=firstname,lastname=lastname, email=email, organisation=organisation, profession=profession, gender=gender, password=password, contact_number=contact_number, viewpass=password
             )
             user.save()
             login(request, user)
             msg = "User Registration Successful"
             # return render(request, 'account/register.html', {'msg': msg})
-            return HttpResponse("registered")
+            return HttpResponse(msg)
         except IntegrityError as e:
             msg = email + " is already registered,if you think there is a issue please contact us at 6264843506"
             # return render(request, "account/register.html", {'msg': msg})
@@ -39,7 +39,8 @@ def userregister(request):
             print("exception :",e)
         # return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
     else:
-        return HttpResponse("registered")
+        # return HttpResponse("registered")
+        return render(request, 'account/register.html')
 
 
 def userlogin(request):

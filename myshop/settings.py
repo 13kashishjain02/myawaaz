@@ -54,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = 'account.Account'
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.linkedin.LinkedinOAuth2',
     # 'social_core.backends.google.GoogleOpenId',
@@ -84,6 +86,7 @@ TEMPLATES = [
     },
 ]
 
+# AUTH_USER_MODEL = 'account.Account'
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
 
@@ -153,6 +156,18 @@ MEDIA_URL = '/media/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '497282501549326'        # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = "2e6f03b7c7d3437f0dcfc2be03f8e79b"  # App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+'fields': 'id, name, email, link '
+}
+
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
+('name', 'name'),
+('email', 'email'),
+('picture', 'picture'),
+('link', 'profile_url'),
+]
+
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '8507...kg6.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'gUzw...CD32-'

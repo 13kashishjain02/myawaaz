@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <div class="text-center">
+        <!-- Button HTML (to Trigger Modal) -->
+        <a href="#loginModal" class="trigger-btn" data-toggle="modal">Click to Open Login Modal</a>
+    </div>
+    
+    <!-- Modal HTML -->
+    <div id="loginModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">			
+                    <h4 class="modal-title">Login</h4>	
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required="required">		
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+                        </div>        
+                        <div class="form-group">
+                            <button type="submit" class="btn border-primary btn-lg btn-block login-btn ">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="/js/bootstrap.js"></script>
+
+</body>
+</html>

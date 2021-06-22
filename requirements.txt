@@ -1,1 +1,2 @@
 install django social-auth-app-django
+pip install djangorestframework
