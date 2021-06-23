@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db17c2aa-6ad7-412a-abc2-1f2c2149bf77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/account/templates/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/static/debate/css/bootstrap.min.css.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/templates/debate/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/templates/debate/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/templates/debate/post_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/post_page.html" afterDir="false" />

@@ -1,0 +1,39 @@
+{% extends 'debate/base.html' %}
+{%load static%}
+{% block title%} Add Discussion - MyAwaaz{% endblock %}
+{% block body%}
+
+<main>
+  <form class="text-center" method="post" action="../../post/">
+      {% csrf_token %}
+    <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW9NSxSwGFhkkc0jFe3o2-CFkiMp2Y9yh-3g&usqp=CAU" alt="" width="72" height="57">
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col col-lg-6">
+          <div class="form-floating">
+              <input type="text" class="form-control" placeholder="FirstName" name="fname">
+              <label>FirstName</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-floating">
+              <input type="text" class="form-control"  placeholder="Last Name" name="lname">
+              <label >Last Name</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-12">
+          <div class="form-floating">
+              <input type="text" class="form-control" id="floatingInput" placeholder="Title" name="title">
+              <label for="floatingInput">Title</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">post</button>
+  </form>
+</main>
+{% endblock %}

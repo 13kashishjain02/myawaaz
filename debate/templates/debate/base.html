@@ -29,10 +29,10 @@
 <header>
   <nav class="navbar header">
   <div class="container-fluid">
-    <a id="logo-img" href="index.html"><img class="logo" src="Logo!_Logo.svg.png" alt="MyAwaaz" style="width:100px;"></a>
+    <a id="logo-img" href="index.html"><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW9NSxSwGFhkkc0jFe3o2-CFkiMp2Y9yh-3g&usqp=CAU" alt="MyAwaaz" style="width:100px;"></a>
     <div class="d-sm-none d-md-block ms-auto d-none d-sm-block">
-    <form class="d-flex ms-auto bar1">
-      <input id="inpt_srch" class="form-control" type="search" placeholder="Search" aria-label="Search" >
+    <form class="d-flex ms-auto bar1" method="get" action="../../search">
+      <input id="inpt_srch" class="form-control" type="search" name="search" placeholder="Search" aria-label="Search" >
       <button id="srch" class="btn btn-outline-success" type="submit" style="padding-left: 6px"><svg class="srch_btn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></button>
     </form>
     </div>
@@ -60,23 +60,24 @@
         </li>
         {% endif %}
         <li class="pad_nav">
-        <a href="#">
+        <a href="../../explore">
         <i class="fa fa-wpexplorer"></i>
         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
         </span><br>Explore</a>
         </li>
       </ul>
-      <div class="d-none d-sm-block d-md-none ms-auto me-auto" style="margin-bottom: 10px;">
-      <form class="d-flex ms-auto">
-      <input id="inptsm_srch" class="form-control" type="search" placeholder="Search" aria-label="Search" >
-      <button id="srch" class="btn btn-outline-success" type="submit"><svg class="srch_btn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></button>
-    </form>
+    <div class="d-none d-sm-block d-md-none ms-auto me-auto" style="margin-bottom: 10px;">
+      <form class="d-flex ms-auto" method="get" action="../../search">
+          <input id="inptsm_srch" class="form-control" type="text" placeholder="Search" name="search" aria-label="Search" >
+          <button id="srch" class="btn btn-outline-success" type="submit"><svg class="srch_btn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></button>
+      </form>
     </div>
       <div class="d-block d-sm-none ms-auto me-auto" style="margin-bottom: 10px;">
-      <form class="d-flex ms-auto">
-      <input id="inptxs_srch" class="form-control" type="search" placeholder="Search" aria-label="Search" >
-      <button id="srch" class="btn btn-outline-success" type="submit"><svg class="srch_btn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></button>
+      <form class="d-flex ms-auto"  method="get" action="../../search">
+      <input id="inptxs_srch" class="form-control" type="text" name="search" placeholder="Search" aria-label="Search" >
+      <button  class="btn btn-outline-success" type="submit"><svg class="srch_btn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></button>
     </form>
+
     </div>
     </div>
   </div>

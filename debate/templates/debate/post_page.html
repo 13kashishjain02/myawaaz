@@ -102,7 +102,7 @@
   animation: e
 }
 header{
-  margin-bottom: 10%;
+  margin-bottom: 20px;
 
 }
 
@@ -111,7 +111,8 @@ header{
 
   /* For mobile phones: */
  header{
-   margin-top: 20%;
+<!--   margin-top: 20%;-->
+    margin-bottom: 20px;
  }
 }
 
@@ -149,7 +150,7 @@ header{
       <div class="border border-success rounded text-success favour-box mb-3 mr-1 d-flex align-items-center justify-content-between" >
           <h3 class="text-center ml-3" style="font-family: 'Roboto', sans-serif;"><strong >Pros</strong></h3>
 
-          <button type="button" style="background-color: white; border:none;" data-toggle="modal" data-target="#myModal"><i class='fa fa-plus-square mr-4 ml-2' style='font-size:30px;color:green'></i></button>
+          <button type="button" style="background-color: white; border:none;" data-bs-toggle="modal" data-bs-target="#myModal"><i class='fa fa-plus-square mr-4 ml-2' style='font-size:30px;color:green'></i></button>
 
           <!-- Modal -->
           <div class="modal fade" id="myModal" role="dialog">
@@ -159,7 +160,7 @@ header{
               <div class="modal-content">
                 <div class="modal-header">
                   <h4 class="modal-title">Add Pros</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
                 <form action="../proslike/{{i.id}}/" method="post" style="display: inline;" class="ml-0">
                     {% csrf_token%}
@@ -167,7 +168,7 @@ header{
                     <textarea name="pros" rows="5" style="width:100%;"></textarea>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 </form>
@@ -229,7 +230,7 @@ header{
        <div class="border border-danger rounded text-danger against-box mb-3 mr-1 d-flex align-items-center justify-content-between" >
           <h3 class="text-center ml-3" style="font-family: 'Roboto', sans-serif;"><strong >Cons</strong></h3>
 
-          <button type="button" style="background-color: white; border:none;" data-toggle="modal" data-target="#myModal2"><i class='fa fa-plus-square mr-4 ml-2' style='font-size:30px;color:red'></i></button>
+          <button type="button" style="background-color: white; border:none;" data-bs-toggle="modal" data-bs-target="#myModal2"><i class='fa fa-plus-square mr-4 ml-2' style='font-size:30px;color:red'></i></button>
 
           <!-- Modal -->
           <div class="modal fade" id="myModal2" role="dialog">
@@ -239,7 +240,7 @@ header{
               <div class="modal-content">
                 <div class="modal-header">
                   <h4 class="modal-title">Add Cons</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
                 <form action="../proslike/{{i.id}}/" method="post" style="display: inline;" class="ml-0">
                     {% csrf_token%}
@@ -247,7 +248,7 @@ header{
                     <textarea name="pros" rows="5" style="width:100%;"></textarea>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 </form>
