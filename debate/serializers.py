@@ -10,5 +10,5 @@ class DebateSerializer(serializers.ModelSerializer):
 class ProsCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pros
-        fields = ('comments',)
+        fields = ('comment',)
 

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from debate.models import Debate,Pros,Cons
 from django.http import HttpResponseRedirect, HttpResponse
 from .serializers import DebateSerializer,ProsCommentSerializer
@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.db.utils import IntegrityError
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     debate=Debate.objects.values()
@@ -14,15 +15,20 @@ def index(request):
 
 def post_view(request,slug):
     debate = Debate.objects.get(slug=slug)
-    title=debate.title
     pros=Pros.objects.filter(debate_pros=debate)
     cons = Cons.objects.filter(debate_cons=debate)
     # return HttpResponse(slug)
+    debate.tags=debate.tags.split(",")
     for i in pros:
-        print(i.comments)
         i.likecount=i.proslike.count()
-        i.tags=i.pros_tags.split(" ")
-    return render(request, "debate/post_page.html", {"title": title,"pros":pros,"cons":cons})
+        if i.pros_tags:
+            i.tags=i.pros_tags.split(" ")
+
+    for i in cons:
+        i.likecount=i.conslike.count()
+        if i.cons_tags:
+            i.tags=i.cons_tags.split(" ")
+    return render(request, "debate/post_page.html", {"debate": debate,"pros":pros,"cons":cons})
 
 def post(request):
     try:
@@ -88,7 +94,7 @@ def add_cons(request,id):
     return HttpResponse("done")
 
 @csrf_exempt
-@api_view(['POST','GET','PUT','DELETE'])
+@api_view(['POST','GET',])
 def comment_api(request,id=None):
     if request.method=="GET":
         if id is None:
@@ -109,7 +115,16 @@ def comment_api(request,id=None):
         if serializer.is_valid():
             comment=serializer.data
             data = Pros.objects.get(pk=id)
+            print(comment)
+            user=request.user
+            try:
+                name=user.firstname + " "+ user.lastname
+            except:
+                name="annonymous"
 
+            comment["name"]=name
+            comment["email"] = user.email
+            print(comment["comment"])
             # request in form
             # {
             #     "comments":
@@ -119,30 +134,26 @@ def comment_api(request,id=None):
             #         }
             # }
 
-            data.comments.append(comment["comments"])
+            data.comment.append(comment)
             data.save()
 
             # serializer.save()
             return Response({'msg','DATA CREATED'})
         return Response(serializer.errors)
 
-    if request.method=='PUT':
-        data=Pros.objects.get(pk=id)
-        serializer=ProsCommentSerializer(data,data=request.data,partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            print("PUT data", serializer.data)
-            return Response({'msg','Data Updated'})
-        return Response(serializer.errors)
 
-    if request.method=='DELETE':
-        data=Debate.objects.get(pk=id)
-        data.delete()
-        return Response({'msg':'data deleted'})
-
+@login_required(login_url="../../login")
 def proslike(request,id):
     pros=Pros.objects.get(id=id)
-    pros.like.add(request.user)
+    pros.proslike.add(request.user)
     pros.save()
-    # return render(request,"debate/index.html")
-    return HttpResponseRedirect(reverse('proslike',args=[str(id)]))
+    url="../../"+pros.debate_pros.slug+"!"
+    return redirect(url)
+
+@login_required(login_url="../../login")
+def conslike(request,id):
+    cons=Cons.objects.get(id=id)
+    cons.conslike.add(request.user)
+    cons.save()
+    url="../../"+cons.debate_cons.slug+"!"
+    return redirect(url)

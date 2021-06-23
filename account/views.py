@@ -14,20 +14,20 @@ from django.http import HttpResponseRedirect, HttpResponse
 def userregister(request):
     msg=""
     if request.method == 'POST':
-        firstname = "raju"
-        lastname = "raju"
-        contact_number = 62648463056
-        email = "jainshivam@gmail.com"
-        organisation = "raju"
-        profession = "raju"
-        gender = "male"
-        password = "12345675"
+        firstname = request.POST['fname']
+        lastname = request.POST['lname']
+        contact_number = request.POST['call']
+        email = request.POST['email']
+        organisation = request.POST['org']
+        profession = request.POST['prof']
+        gender = request.POST['gender']
+        password = request.POST['password']
         try:
             user = Account.objects.create_user(
                 firstname=firstname,lastname=lastname, email=email, organisation=organisation, profession=profession, gender=gender, password=password, contact_number=contact_number, viewpass=password
             )
             user.save()
-            login(request, user)
+            login(request, user,backend='django.contrib.auth.backends.ModelBackend')
             msg = "User Registration Successful"
             # return render(request, 'account/register.html', {'msg': msg})
             return HttpResponse(msg)
@@ -40,7 +40,7 @@ def userregister(request):
         # return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
     else:
         # return HttpResponse("registered")
-        return render(request, 'account/register.html')
+        return render(request, 'account/signup.html')
 
 
 def userlogin(request):
@@ -50,26 +50,41 @@ def userlogin(request):
         return redirect("../")
     else:
         if request.POST:
-            form = AccountAuthenticationForm(request.POST)
-            if form.is_valid():
-                email = form.cleaned_data['email']
-                password = form.cleaned_data['password']
-                user = authenticate(email=email, password=password)
-                global usernamee
-                usernamee = email
-                if user:
-                    login(request, user)
-                    request.user = user
-                    next = request.POST.get('next', '../')
-                    if next == "":
-                        next="../"
-                    return redirect(next)
+            password = request.POST['password']
+            email = request.POST['email']
+            user= authenticate(email=email, password=password)
+            if user:
+                login(request, user)
+                request.user = user
+                next = request.POST.get('next', '../../')
+                if next == "":
+                    next="../../"
+                return redirect(next)
                     # return redirect('../')
-                else:
-                    msg = "invalid Email or password"
-        else:
-            form = AccountAuthenticationForm()
-        return render(request, 'account/login.html', {"form": form, "msg": msg})
+            else:
+                msg = "invalid Email or password"
+                print(msg)
+        #     form = AccountAuthenticationForm(request.POST)
+        #     if form.is_valid():
+        #         email = form.cleaned_data['email']
+        #         password = form.cleaned_data['password']
+        #         user = authenticate(email=email, password=password)
+        #         global usernamee
+        #         usernamee = email
+        #         if user:
+        #             login(request, user)
+        #             request.user = user
+        #             next = request.POST.get('next', '../')
+        #             if next == "":
+        #                 next="../"
+        #             return redirect(next)
+        #             # return redirect('../')
+        #         else:
+        #             msg = "invalid Email or password"
+        # else:
+        #     form = AccountAuthenticationForm()
+
+        return render(request, 'account/signin.html', { "msg": msg})
     # username=BaseUserManager.normalize_email(username)
 
     context['login form'] = form
