@@ -2,16 +2,46 @@
 {%load static%}
 {% block title%} Shop - Elpizo{% endblock %}
 {% block style%}
-    <style>
-      header {
-    height: 50vh;
-    background-size:cover;
-    background-image:url(static/debate/images/explore_desktop.jpeg);
-}
-  </style>
+<!--    <style>-->
+<!--      header {-->
+<!--    height: 50vh;-->
+<!--    background-size:cover;-->
+<!--    background-image:url(static/debate/images/explore_desktop.jpeg);-->
+<!--}-->
+<!--  </style>-->
 {% endblock %}
 
 {% block body%}
+<div id="carousel1" class="carousel slide mb-3" data-bs-ride="carousel" style="height:75vh">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{%static 'debate/images/explore_desktop.jpeg'%}" class="d-block w-100" style="height:480px" alt="...">
+
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'debate/images/explore_desktop.jpeg'%}" class="d-block w-100" style="height:480px" alt="...">
+
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'debate/images/explore_desktop.jpeg'%}" class="d-block w-100" style="height:480px" alt="...">
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
 <div class="container-fluid pop-tags">
   <center><h3 class="p-sm-3">Some Popular Tags</h3></center>
   <div class="row">

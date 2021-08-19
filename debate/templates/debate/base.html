@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%} {% endblock %}</title>
 
+
 <!--   Roboto font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
@@ -89,80 +90,31 @@
   <div class="container-fluid margin-bottom: 0">
     <ul class="ms-auto me-auto mb-2 mb-lg-0 mb-md-0 mb-sm-0 navi" style="list-style-type: none; padding-left: 0px">
         <li class="nav-item active">
-          <a class="nav-link" aria-current="page" href="#">SALE</a>
+          <a class="nav-link" aria-current="page" href="#">Politics</a>
         </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Fashion & Accessories
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Opt1</a></li>
-            <li><a class="dropdown-item" href="#">Opt2</a></li>
-            <li><a class="dropdown-item" href="#">Opt3</a></li>
-          </ul>
+        <li class="nav-item  active">
+          <a class="nav-link" aria-current="page" href="#">Philosophy</a>
         </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Home & Kitchen
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Opt1</a></li>
-            <li><a class="dropdown-item" href="#">Opt2</a></li>
-            <li><a class="dropdown-item" href="#">Opt3</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Kids, Toys & Babies
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Opt1</a></li>
-            <li><a class="dropdown-item" href="#">Opt2</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Events
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Opt1</a></li>
-            <li><a class="dropdown-item" href="#">Opt2</a></li>
-            <li><a class="dropdown-item" href="#">Opt3</a></li>
-          </ul>
-        </li>
-        <!-- dummy work start -->
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dummy
-          </a>
-          <ul class="dropdown-menu multi-level" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Opt1</a></li>
-            <li class="dropdown-submenu">
-              <a class="dropdown-item" tabindex="-1" href="#">Opt2</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Opt1</a></li>
-                <li><a class="dropdown-item" href="#">Opt2</a></li>
-                <li><a class="dropdown-item" href="#">Opt3</a></li>
-              </ul>
-            </li>
-            <li><a class="dropdown-item" href="#">Opt3</a></li>
-          </ul>
-        </li>
-        <!-- dummy work end -->
         <li class="nav-item active">
-          <a class="nav-link" href="#">More</a>
+            <a class="nav-link" aria-current="page" href="#">Science</a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#">Ethics</a>
         </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Contact Us
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Opt1</a></li>
-            <li><a class="dropdown-item" href="#">Opt2</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Opt3</a></li>
-          </ul>
+        <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#">Gender</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#">Religion</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#">Education</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#">Feminism</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#">See More</a>
         </li>
       </ul>
   </div>
@@ -257,11 +209,26 @@
 </header>
 {% block body%} {% endblock %}
 
+
   <footer>
     <div class="container-fluid  justify-content-center text-light bg-dark">
       <footer>
-          <div class="row my-5 justify-content-center py-5">
-              <div class="col-11">
+          <div class="row my-5 justify-content-center ">
+              <ul class="nav justify-content-center" style="background:white;">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#"><i class="fa fa-facebook-square" style="font-size:30px;"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-twitter-square" style="font-size:30px;"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-linkedin-square" style="font-size:30px;"></i></a>
+                  </li>
+<!--                  <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#" ><i class="fab fa-google-plus-g" style="font-size:30px;"></i></a>-->
+<!--                  </li>-->
+              </ul>
+              <div class="col-11 py-5">
                   <div class="row ">
                       <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
                           <h3 class="text-muted mb-md-0 mb-5 bold-text">My Awaaz</h3>
