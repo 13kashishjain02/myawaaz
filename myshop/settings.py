@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'contact',
     'account',
     'debate',
+
     'social_django',
+    'star_ratings',
 
 ]
 
@@ -183,3 +185,6 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_EXTRA_DATA = [('id', 'id'),
                                           ('firstName', 'first_name'),
                                           ('lastName', 'last_name'),
                                           ('emailAddress', 'email_address')]
+
+
+STAR_RATINGS_RERATE = True

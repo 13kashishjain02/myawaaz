@@ -1,10 +1,36 @@
-{% extends 'debate/base.html' %}
+<!DOCTYPE html>
 {%load static%}
-{% block title%} Shop - Elpizo{% endblock %}
-{% block style%}
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{debate.title}}</title>
+
+
+<!--   Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{%static 'debate/css/mystyle.css'%}">
+    <link rel="stylesheet" href="{%static 'debate/css/style.css'%}">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+<!--rating-->
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+
 
 <!--script for popover-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -118,21 +144,117 @@ header{
 
 
   </style>
-{% endblock %}
+        <style>
+            div.sticky {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          padding: 5px;
+          /*background-color: #b5352a;*/
+          background-color: #b5352a;
+          border: 2px solid #4CAF50;
+          height:90vh;
+        }
+        </style>
+        <style>
+            #overflowTest {
+              background: #e3e3e3;
+              color: white;
+              padding: 15px;
+              width: 100%;
+              height: 25vh;
+              overflow: scroll;
+              border: 1px solid #ccc;
+            }
 
-{% block body%}
-<div class="container ">
-  <div class="container-title">
-      <img src="media/{{debate.image}}" alt="Snow" style="width:100%; height:30vh;">
-      <div class="centered">
-          {% for t in debate.tags|slice:"0:5" %}
-          <button class="titletag-button mb-4">
-              <b style="font-family: 'Roboto', sans-serif;" class="text-uppercase"> {{t}}</b>
-          </button>
-          {% endfor %}
-      </div>
+        </style>
+            <!--product slider / hide box in mobile view-->
+    <style>
+        @media (max-width: 768px) {
+            .hide {
+              display: none;
+            }
+          }
+        @media (min-width: 769px) {
+            .hide_lap {
+              display: none;
+            }
+          }
+    </style>
+  </head>
+<body>
+<header>
+  <nav class="navbar header">
+  <div class="container-fluid">
+    <a id="logo-img" href="../"><img class="logo" src="{%static 'debate/images/logo.png'%}" alt="MyAwaaz" style="width:100px;"></a>
+    <div class="d-sm-none d-md-block ms-auto d-none d-sm-block">
+        <h1 style="font-family: 'Roboto', sans-serif; color:#f6f6f6; text-transform: uppercase; font-size:16px;" >{{debate.title}}</h1>
+    </div>
+      <ul class="flex-container ms-auto hide" style="list-style-type: none">
+        <li class="pad_nav">
+        <a href="../../../">
+        <i class="fa fa-home"></i>
+        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+        <br>Home</a>
+        </li>
+
+        {%if request.user.is_authenticated %}
+        <li class="pad_nav">
+        <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+        </svg><br>Account</a>
+        </li>
+        {% else %}
+        <li class="pad_nav">
+        <a href="../../login">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+        </svg><br>Login/register</a>
+        </li>
+        {% endif %}
+        <li class="pad_nav">
+        <a href="../../explore">
+        <i class="fa fa-wpexplorer"></i>
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </span><br>Explore</a>
+        </li>
+      </ul>
+    <div class="d-none d-sm-block d-md-none ms-auto me-auto" style="margin-bottom: 10px;">
+        <h1 style="font-family: 'Roboto', sans-serif; color:#f6f6f6; text-transform: uppercase; font-size:16px;">{{debate.title}}</h1>
+    </div>
+      <div class="d-block d-sm-none ms-auto me-auto" style="margin-bottom: 10px;">
+      <h1 style="font-family: 'Roboto', sans-serif; color:#f6f6f6; text-transform: uppercase; font-size:16px;">{{debate.title}}</h1>
+
+    </div>
+    </div>
   </div>
-<!--<img src="{%static 'debate/images/science.jpg'%}" alt="drugs" width="100%" height="200px">-->
+  </nav>
+
+</header>
+<div class="alert sticky" >
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">X</span>
+        <div class="container-title">
+              <img src="media/{{debate.image}}" alt="Snow" class="mb-3" style="width:100%; height:30vh;">
+<!--          <div class="centered">-->
+              {% for t in debate.tags|slice:"0:5" %}
+              <button class="titletag-button mb-4">
+                  <b style="font-family: 'Roboto', sans-serif;" class="text-uppercase"> {{t}}</b>
+              </button>
+              {% endfor %}
+<!--              </div>-->
+            <div id="overflowTest">
+                {{debate.description}}
+            </div>
+        </div>
+        <span class="closebtn " onclick="this.parentElement.style.display='none';">
+                    <div class="d-grid gap-2 col-6 mx-auto mt-2">
+                      <button class="btn " style="background:#99c5c9" type="button">ENTER</button>
+                    </div>
+        </span>
+</div>
+
+<div class="container ">
 
   <div class="row mt-4">
 
@@ -140,7 +262,7 @@ header{
 
     <div class="col-12 ">
         <div class="border border-info rounded text-info title-box mb-3 d-flex align-items-center justify-content-center">
-            <h2  style="font-family: 'Roboto', sans-serif; color:#203FA0;" class="pl-2" ><strong >{{debate.title}}</strong></h2>
+            <h2  style="font-family: 'Roboto', sans-serif; color:#203FA0; text-transform: uppercase;" class="pl-2" ><strong >{{debate.title}}</strong></h2>
         </div>
     </div>
 
@@ -148,7 +270,7 @@ header{
 
     <div class="col-6 pr-0">
       <div class="border border-success rounded text-success favour-box mb-3 mr-1 d-flex align-items-center justify-content-between" >
-          <h3 class="text-center ml-3" style="font-family: 'Roboto', sans-serif;"><strong >Pros</strong></h3>
+          <h3 class="text-center ml-3" style="font-family: 'Roboto', sans-serif;"><strong style="margin-left: 15px;">Pros</strong></h3>
 
           <button type="button" style="background-color: white; border:none;" data-bs-toggle="modal" data-bs-target="#myModal"><i class='fa fa-plus-square mr-4 ml-2' style='font-size:30px;color:green'></i></button>
 
@@ -162,10 +284,11 @@ header{
                   <h4 class="modal-title">Add Pros</h4>
                   <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
-                <form action="../proslike/{{i.id}}/" method="post" style="display: inline;" class="ml-0">
+                <form action="../addpros/{{debate.id}}" method="post" style="display: inline;" class="ml-0">
                     {% csrf_token%}
                 <div class="modal-body">
-                    <textarea name="pros" rows="5" style="width:100%;"></textarea>
+                    <textarea name="pro" rows="5" style="width:100%;" placeholder="Add your point"></textarea>
+                    <input name="tags" type="text" style="width:100%" placeholder="Tags">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
@@ -180,7 +303,7 @@ header{
       </div>
       {% for i in pros %}
         <div class="  border border-success rounded mr-1 mb-1" style="box-shadow: 2px 3px 6px 2px #e9ecef;">
-          <p style="font-size:15px; font-family: 'Roboto', sans-serif;" class="pl-1">
+          <p style="font-size:15px; font-family: 'Roboto', sans-serif; text-align: center;" class="pl-1">
               {{i.pros}}
           </p>
           <div class="text-left">
@@ -190,7 +313,7 @@ header{
                 {{i.likecount}}
                 <form action="../proslike/{{i.id}}/" method="post" style="display: inline;" class="ml-0">
                     {% csrf_token%}
-                     <button type="submit" style="background-color: white; border:none;"><i class="fa fa-thumbs-o-up mb-2" style="font-size:20px;color:blue"></i></button>
+                     <button type="submit" style="background-color: transparent; border:none;"><i class="fa fa-thumbs-o-up mb-2" style="font-size:20px;color:blue"></i></button>
                 </form>
 
 <!--                <button type="button" style="background-color: white; border:none;" data-toggle="collapse" data-target="#comment{{i.id}}"><i class="fa fa-commenting-o ml-2 mb-2"></i></button>-->
@@ -201,8 +324,12 @@ header{
                     <hr>
                     <div class="d-flex flex-row add-comment-section mb-1">
 <!--                        <img class="img-fluid img-responsive rounded-circle mr-2" src="https://i.imgur.com/qdiP4DB.jpg" width="38">-->
-                        <input type="text" class="form-control mr-1" placeholder="Add comment">
-                        <button class="tag-button" type="button">send</button>
+                        <form action="../comment/" method="get">
+                            <input type="hidden" name="section" value="pros">
+                            <input type="hidden" name="id" value="{{i.id}}">
+                            <input type="text" class="form-control mr-1" name="comment" placeholder="Add comment">
+                            <button class="tag-button" type="submit">send</button>
+                        </form>
                     </div>
                     {% for c in i.comment %}
                     <div class="card p-3">
@@ -210,7 +337,7 @@ header{
                             <div class="user d-flex flex-row align-items-center" >
                                 <img src="https://www.internetandtechnologylaw.com/files/2019/06/iStock-872962368-chat-bots.jpg" width="30" class="user-img rounded-circle mr-2">
                                 <span>
-                                    <small class="font-weight-bold text-primary">{{c.name}}</small>
+                                    <small class="font-weight-bold text-primary">{{c.email|slice:":10"}}</small>
                                     <small class="font-weight-bold">{{c.comment}}</small>
                                 </span>
                             </div>
@@ -228,7 +355,7 @@ header{
 
     <div class="col-6 pl-0">
        <div class="border border-danger rounded text-danger against-box mb-3 mr-1 d-flex align-items-center justify-content-between" >
-          <h3 class="text-center ml-3" style="font-family: 'Roboto', sans-serif;"><strong >Cons</strong></h3>
+          <h3 class="text-center ml-3" style="font-family: 'Roboto', sans-serif;"><strong style="margin-left: 15px;">Cons</strong></h3>
 
           <button type="button" style="background-color: white; border:none;" data-bs-toggle="modal" data-bs-target="#myModal2"><i class='fa fa-plus-square mr-4 ml-2' style='font-size:30px;color:red'></i></button>
 
@@ -242,10 +369,11 @@ header{
                   <h4 class="modal-title">Add Cons</h4>
                   <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
-                <form action="../proslike/{{i.id}}/" method="post" style="display: inline;" class="ml-0">
+                <form action="../addcons/{{debate.id}}" method="post" style="display: inline;" class="ml-0">
                     {% csrf_token%}
                 <div class="modal-body">
-                    <textarea name="pros" rows="5" style="width:100%;"></textarea>
+                    <textarea name="con" rows="5" style="width:100%;" placeholder="Add your point"></textarea>
+                    <input name="tags" type="text" style="width:100%" placeholder="Tags">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
@@ -260,16 +388,18 @@ header{
       </div>
       {% for i in cons %}
         <div class="  border border-danger rounded mr-1 mb-1" style="box-shadow: 2px 3px 6px 2px #e9ecef;" >
-          <p style="font-size:15px; font-family: 'Roboto', sans-serif;" class="pl-1">
+          <p style="font-size:15px; font-family: 'Roboto', sans-serif; text-align: center;" class="pl-1">
               {{i.cons}}
           </p>
           <div class="text-left">
-                <a data-toggle="popover" title="Tags" data-content="tags will be shown here"><button type="button" class="tag-button ml-3 mb-2">Tags</button></a>
-
+<!--                <a data-toggle="popover" title="Tags" data-content="tags will be shown here"><button type="button" class="tag-button ml-3 mb-2">Tags</button></a>-->
+                <a data-toggle="popover" title="Tags"
+                   data-bs-content="{{i.tags}}"><button type="button" class="tag-button ml-2 mr-2 mb-2">Tags</button>
+                </a>
                 {{i.likecount}}
                 <form action="../conslike/{{i.id}}/" method="post" style="display: inline;" class="ml-0">
                     {% csrf_token%}
-                     <button type="submit" style="background-color: white; border:none;"><i class="fa fa-thumbs-o-up mb-2" style="font-size:20px;color:blue"></i></button>
+                     <button type="submit" style="background-color: transparent; border:none;"><i class="fa fa-thumbs-o-up mb-2" style="font-size:20px;color:blue"></i></button>
                 </form>
 
                 <button type="button" style="background-color: white; border:none;" data-toggle="collapse" data-target="#commentcons{{i.id}}"><i class="fa fa-commenting-o ml-3 mb-2"></i></button>
@@ -277,8 +407,12 @@ header{
                     <hr>
                     <div class="d-flex flex-row add-comment-section mb-1">
 <!--                        <img class="img-fluid img-responsive rounded-circle mr-2" src="https://i.imgur.com/qdiP4DB.jpg" width="38">-->
-                        <input type="text" class="form-control mr-1" placeholder="Add comment">
-                        <button class="tag-button" type="button">send</button>
+                        <form action="../comment/" method="get">
+                            <input type="hidden" name="section" value="cons">
+                            <input type="hidden" name="id" value="{{i.id}}">
+                            <input type="text" class="form-control mr-1" name="comment" placeholder="Add comment">
+                            <button class="tag-button" type="submit">send</button>
+                        </form>
                     </div>
                     {% for c in i.comment %}
                     <div class="card p-3">
@@ -310,4 +444,60 @@ header{
     });
 </script>
 
-{%endblock%}
+<!--rating-->
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.js' %}"></script>
+
+
+
+  <footer>
+    <div class="container-fluid  justify-content-center text-light bg-dark">
+      <footer>
+          <div class="row my-5 justify-content-center ">
+              <ul class="nav justify-content-center" style="background:white;">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#"><i class="fa fa-facebook-square" style="font-size:30px;"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-twitter-square" style="font-size:30px;"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-linkedin-square" style="font-size:30px;"></i></a>
+                  </li>
+<!--                  <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#" ><i class="fab fa-google-plus-g" style="font-size:30px;"></i></a>-->
+<!--                  </li>-->
+              </ul>
+              <div class="col-11 py-5">
+                  <div class="row ">
+                      <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                          <h3 class="text-muted mb-md-0 mb-5 bold-text">My Awaaz</h3>
+                      </div>
+                      <div class="col-xl-2 col-md-4 col-sm-4 col-12 ">
+                          <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                          <ul class="list-unstyled text-decoration-none">
+                              <li>Home</li>
+                              <li>Create</li>
+                              <li>Explore</li>
+                              <li>About Us</li>
+                          </ul>
+                      </div>
+                      <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                          <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                          <p class="mb-1">829 , Xyz colony </p>
+                          <p>DELHI , INDIA</p>
+                      </div>
+                  </div>
+                  <div class="row ">
+                      <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                          <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> My Awaaz All Rights Reserved.</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+  </footer>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -84,39 +84,46 @@ def pros_cons(request,id):
         debate.save()
     return HttpResponse("done")
 
-def comment(request,id):
-    # Debate.objects.filter(data__owner__other_pets__0__name='Fishy')
-    debate = Debate.objects.get(id=id)
-
-    # section takes the value pros & cons depending on where the user posted his views
-    section = "cons"
+@login_required(login_url="../../login")
+def comment(request):
+    section = request.GET.get("section")
+    id= request.GET.get("id")
 
     # his view; what he commented is saved by comment
-    comment = "point 4"
-
-    # name=request.user.name
-    name='ram'
-
+    comment = request.GET.get("comment")
+    user=request.user
+    # name=user.firstname+" " +user.lastname
+    email=user.email
     if section == "pros":
-        debate.pros['comment'].append({'name': name, 'comment':comment})
-        debate.save()
+        pros = Pros.objects.get(id=id)
+        pros.comment.append({"comment":comment,"email":email})
+        pros.save()
     else:
-        debate.cons['comment'].append({'name': name, 'comment':comment})
-        debate.save()
-    return HttpResponse("done")
+        cons = Cons.objects.get(id=id)
+        cons.comment.append({"comment": comment, "email": email})
+        cons.save()
+    return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
 
 
 def add_pros(request,id):
-    debate=Debate.objects.get(id=id)
-    pros = Pros.objects.create(debate_pros=debate,pros="pros2")
-    pros.save()
-    return HttpResponse("done")
+    debate = Debate.objects.get(id=id)
+    if request.method=='POST':
+        point=request.POST['pro']
+        tags = request.POST['tags']
+        pros = Pros.objects.create(debate_pros=debate,pros=point,pros_tags=tags)
+        pros.save()
+    url="../" + debate.slug+"!"
+    return redirect(url)
 
 def add_cons(request,id):
-    debate=Debate.objects.get(id=id)
-    cons = Cons.objects.create(debate_cons=debate,cons="cons2")
-    cons.save()
-    return HttpResponse("done")
+    debate = Debate.objects.get(id=id)
+    if request.method == 'POST':
+        point = request.POST['con']
+        tags = request.POST['tags']
+        cons = Cons.objects.create(debate_cons=debate,cons=point,cons_tags=tags)
+        cons.save()
+    url = "../" + debate.slug + "!"
+    return redirect(url)
 
 @csrf_exempt
 @api_view(['POST','GET',])
