@@ -6,7 +6,7 @@
 <main class="form-signin ">
   <form class="text-center" method="post" action="../../login/">
       {% csrf_token %}
-    <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW9NSxSwGFhkkc0jFe3o2-CFkiMp2Y9yh-3g&usqp=CAU" alt="" width="72" height="57">
+    <img class="mb-4" src="{%static 'debate/images/logo.png'%}" alt="" width="72" height="57">
 
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -28,7 +28,7 @@
 
     <h3 class="h3 mt-3 mb-3 fw-normal">OR</h3>
     <button class="w-100 btn btn-lg mb-2" style="background-color:#3a5696; color:white;" type="submit"><i class="fa fa-facebook-square" aria-hidden="true"></i> Sign in with facebook</button>
-    <button class="w-100 btn btn-lg btn-primary" style="background-color:#0076b0; color:white;" type="submit"><i class="fa fa-linkedin" aria-hidden="true"></i> Sign in with linkdin</button>
+    <button class="w-100 btn btn-lg btn-primary" style="background-color:#0076b0; color:white;" type="submit"><i class="fa fa-linkedin" aria-hidden="true"></i> Sign in with linkedin</button>
 <!--    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>-->
     <hr>
     <a href="../register"> <h3 class="" style="color:orange; font-family: 'Roboto', sans-serif; font-size:18px;">Register/Create new Account</h3> </a>

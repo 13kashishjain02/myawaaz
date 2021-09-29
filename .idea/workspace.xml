@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="db17c2aa-6ad7-412a-abc2-1f2c2149bf77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/templates/account/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/account/templates/account/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/templates/account/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/account/templates/account/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/templates/debate/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debate/templates/debate/explore.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/explore.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/templates/debate/post_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/debate/templates/debate/post_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debate/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/debate/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myshop/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
