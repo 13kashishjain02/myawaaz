@@ -28,8 +28,14 @@ def explore(request):
     debate=Debate.objects.annotate(q_count=Count('like')).order_by('-q_count')
     for i in debate:
         i.likecount=i.like.count()
-
     return render(request,"debate/explore.html",{"debate":debate})
+
+def tag_filter(request,tag):
+    debate=Debate.objects.annotate(q_count=Count('like')).order_by('-q_count').filter(tags=tag)
+    # debate=debate.objects.filter(tags=tag)
+    for i in debate:
+        i.likecount=i.like.count()
+    return render(request,"debate/tags_filter.html",{"debate":debate})
 
 def post_view(request,slug):
     debate = Debate.objects.get(slug=slug)

@@ -5,6 +5,7 @@ urlpatterns = [
 
     path('',views.index,name='home'),
     path('explore/',views.explore,name='explore'),
+    path('tag_filter/<str:tag>',views.tag_filter,name='tag_filter'),
     path('post/',views.post,name='post'),
     path('pros_cons/<int:id>',views.pros_cons,name='proscons'),
     path('comment/',views.comment,name='comment'),

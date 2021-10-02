@@ -1,0 +1,44 @@
+{% extends 'debate/base.html' %}
+{%load static%}
+{% block title%} Shop - Elpizo{% endblock %}
+{% block style%}
+
+{% endblock %}
+
+{% block body%}
+
+    <div class="container">
+        {%if debate%}
+        <div class="row">
+            <div class="card-group">
+            {% for i in debate %}
+            <div class="card m-2 mb-3" style="border-radius: .2rem; box-shadow: 2px 3px 6px 2px #e9ecef;">
+                <a href="../{{i.slug}}!" class="p-1">
+                    <img src="/media/{{i.image}}" class="card-img-top" style="border-radius: .2rem;" alt="{{i.slug}}" height="200px">
+                </a>
+                <div class="card-body ">
+                    <a href="../{{i.slug}}!"><h5 class="card-title" style="text-align: center; font-weight: 500; font-family: 'Roboto', sans-serif;">{{i.title}}</h5></a>
+                    <hr>
+                    <ul class="list-group list-group-horizontal list-group-flush ">
+                      <img src="{%static 'debate/icons/chat-right-dots.svg'%}" alt="">
+                      <li class="list-group-item">2.6K</li>
+                        <a href="../proslike/10"><img src="{%static 'debate/icons/pencil-fill.svg'%}" alt=""></a>
+                      <li class="list-group-item">{{i.likecount}}</li>
+                      <img src="{%static 'debate/icons/people-fill.svg'%}" alt="">
+                      <li class="list-group-item">7k</li>
+                      <img src="{%static 'debate/icons/eye.svg'%}" alt="">
+                      <li class="list-group-item">7k</li>
+                    </ul>
+                </div>
+            </div>
+
+            {% endfor %}
+            </div>
+        </div>
+        {%else%}
+        <h1 class="m-5 p-5">No Result Found</h1>
+        {%endif%}
+    </div>
+{% endblock %}
+
+
