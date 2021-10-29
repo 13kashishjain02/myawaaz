@@ -29,8 +29,9 @@ def userregister(request):
             user.save()
             login(request, user,backend='django.contrib.auth.backends.ModelBackend')
             msg = "User Registration Successful"
-            # return render(request, 'account/register.html', {'msg': msg})
-            return HttpResponse(msg)
+            # return render(request, 'account/register.html', {'msg': msg}
+            return redirect("../")
+            # return HttpResponse(msg)
         except IntegrityError as e:
             msg = email + " is already registered,if you think there is a issue please contact us at 6264843506"
             # return render(request, "account/register.html", {'msg': msg})

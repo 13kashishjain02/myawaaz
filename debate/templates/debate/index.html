@@ -40,16 +40,24 @@
   <center><h3 class="p-sm-3" style="font-weight: 700; font-family: 'Roboto', sans-serif;">Some Popular Tags</h3></center>
   <div class="row">
     <div class=" col-3">
-      <img src="{%static 'debate/images/icon1.jpeg'%}" alt="robot-picture" class="rounded-circle img-fluid ">
+      <a href="../../tag_filter/climate">
+        <img src="{%static 'debate/images/icon1.jpeg'%}" alt="robot-picture" class="rounded-circle img-fluid ">
+      </a>
     </div>
     <div class="col-3">
-      <img src="{%static 'debate/images/icon2.jpeg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      <a href="../../tag_filter/economics">
+        <img src="{%static 'debate/images/icon2.jpeg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      </a>
     </div>
     <div class="col-3">
-      <img src="{%static 'debate/images/icon5.jpeg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      <a href="../../tag_filter/technology">
+        <img src="{%static 'debate/images/icon5.jpeg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      </a>
     </div>
     <div class="col-3">
-      <img src="{%static 'debate/images/icon4.jpeg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      <a href="../../tag_filter/law">
+        <img src="{%static 'debate/images/icon4.jpeg'%}" alt="politics-pic" class="rounded-circle img-fluid ">
+      </a>
     </div>
   </div>
 
@@ -79,16 +87,16 @@
                 <div class="card-body ">
                     <a href="../{{i.slug}}!"><h5 class="card-title" style="text-align: center; font-weight: 500; font-family: 'Roboto', sans-serif;">{{i.title}}</h5></a>
                     <hr>
-                    <ul class="list-group list-group-horizontal list-group-flush ">
-                      <img src="{%static 'debate/icons/chat-right-dots.svg'%}" alt="">
-                      <li class="list-group-item">2.6K</li>
-                        <a href="../proslike/10"><img src="{%static 'debate/icons/pencil-fill.svg'%}" alt=""></a>
-                      <li class="list-group-item">{{i.likecount}}</li>
-                      <img src="{%static 'debate/icons/people-fill.svg'%}" alt="">
-                      <li class="list-group-item">7k</li>
-                      <img src="{%static 'debate/icons/eye.svg'%}" alt="">
-                      <li class="list-group-item">7k</li>
-                    </ul>
+<!--                    <ul class="list-group list-group-horizontal list-group-flush ">-->
+<!--                      <img src="{%static 'debate/icons/chat-right-dots.svg'%}" alt="">-->
+<!--                      <li class="list-group-item">2.6K</li>-->
+<!--                        <a href="../proslike/10"><img src="{%static 'debate/icons/pencil-fill.svg'%}" alt=""></a>-->
+<!--                      <li class="list-group-item">{{i.likecount}}</li>-->
+<!--                      <img src="{%static 'debate/icons/people-fill.svg'%}" alt="">-->
+<!--                      <li class="list-group-item">7k</li>-->
+<!--                      <img src="{%static 'debate/icons/eye.svg'%}" alt="">-->
+<!--                      <li class="list-group-item">7k</li>-->
+<!--                    </ul>-->
                 </div>
             </div>
 
