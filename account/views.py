@@ -104,8 +104,7 @@ def account_view(request):
     # if not request.user.is_authenticated:
     #     return redirect("../login")
     msg=""
-    context = {"name": request.user.name, "email": request.user.email, "contact_number": request.user.contact_number,
-               "msg": msg}
+    context = { "email": request.user.email,"msg": msg}
     if request.POST:
         name = request.POST['name']
         contact_number = request.POST.get('contact_number')
